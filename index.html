@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio - Junior Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <h2> Coming soon. </h2>
+    <div class="content">
+        <h1>Jack Convis</h1>
+        <p>Hello! I'm a Junior Software Engineer with a passion for building efficient and impactful software solutions. 
+        I'm experienced in back-end development with C# and Java and enjoy learning new technologies to expand my skill set.</p>
+        
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>With a foundation in software engineering, I focus on writing clean, maintainable code and contributing to collaborative team environments. I'm eager to grow in my career by tackling challenging projects and making a meaningful impact.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p><strong>Task Manager App:</strong> Built a simple task management tool in Java to help users organize their daily schedules.</p>
+            <p><strong>Portfolio Website:</strong> Designed and implemented this portfolio to showcase my work and skills.</p>
+            <p><strong>Team Collaboration Tool:</strong> Contributed to developing a real-time messaging app as part of a team project.</p>
+        </section>
+    </div>
+
+
+    <div class="contact-box" id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:jack.convis@example.com">jack.convis@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/jackconvis" target="_blank">linkedin.com/in/jackconvis</a></p>
+    </div>
+
+    <div class="me" id="headshot">
+        <h2><img src="8C92E70A-AA87-4E1D-AC48-F3595123E2EB.JPG" width="400" height="400"></h2>
+        
+    </div>
+
+    <!-- Hover box for cursor effect -->
+    <div class="hover-box" id="hoverBox"></div>
+
+    <script>
+        // JS for hover box cursor effect
+        const hoverBox = document.getElementById('hoverBox');
+        document.addEventListener('mousemove', (e) => {
+            // Center the hover box on the cursor NOT DONE YET
+            hoverBox.style.left = `${e.pageX}px`;
+            hoverBox.style.top = `${e.pageY}px`;
+        });
+    </script>
 </body>
 </html>
