@@ -65,7 +65,7 @@ body {
 
 .me{
     position: fixed;
-    right: 150px;
+    right: 175px;
     top: 50%;
     transform: translateY(-50%);
     width: 250px;
