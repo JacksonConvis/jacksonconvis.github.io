@@ -1,74 +1,355 @@
-<title>Jack Convis</title>
-    <h3>loading :]</h3>
-    <!--
-    <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="styles.css">
-        </head>
-        <body>
-            <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack Convis Magazine Portfolio</title>
 
-                <div class="card contact-card">
-                    <h2>Contact</h2>
-                    <p>Email: <a href="mailto:jackconvis@gmail.com">jackconvis@gmail.com</a></p>
-                    <p>LinkedIn: <a href="https://linkedin.com/in/jacksonconvis" target="_blank">linkedin.com/in/jacksonconvis</a></p>
-                    <p>GitHub: <a href="https://github.com/jacksonconvis" target="_blank">github.com/jacksonconvis</a></p>
-                </div>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-            
-                <div class="card about-card">
-                    <h2>About Me</h2>
-                    <p>Hi, I'm Jack Convis! I'm a Software Engineer who specializes in back-end development using C# and Java. I love building efficient and impactful software and enjoy collaborating with cross-functional teams to tackle challenging projects.</p>
-                    <p>I'm a firm believer that the best thing you can bring into a workplace everyday is a positive attitude. </p> 
-                    <p>My interests: Coding, Football, Investing, Disc Golf, Table Tennis, Cryptocurrency, Video Editing, Fashion, & Music</p>
-                </div>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                
-                <div class="card projects-card">
-                    <h2>Projects</h2>
-                    <ul>
-                        <li><strong>ONE-STOP-STOCKS: 
-                            <a href="https://www.linkedin.com/posts/jacksonconvis_as-i-come-to-an-end-with-my-boot-camp-at-activity-7059906132613480448--8zr/?utm_source=share&utm_medium=member_desktop">Video demo</a></strong> 
-                            , <a href="https://github.com/JacksonConvis/One-Stop-Stocks">GitHub</a>
-                        </li>
-                            <li> Pulling in data from Reddit's API, designed and implemented a Web application displaying information on the top 50 trending publicly-traded stocks.</li>
-                            <li>Technologies Used: Java, Spring MVC, Angular, Typescript, SQL</li>
-                            
-                        <li><strong>Personal Website:</strong> Designed and coded this website you're currently viewing :) </li>
+body {
+    background:
+      radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 40%),
+      linear-gradient(to bottom, #1a1714, #0d0c0b);
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
 
-                        <li><strong>Upmeet</strong> Group project where I developed the back-end for an events-tracking and management website using Java, Spring, Angular, and MySQL
-                            <a href="https://github.com/JacksonConvis/Upmeet-Full-Stack-Angular">GitHub</a></li>
-                    </ul>
-                </div>
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: .08;
+    pointer-events: none;
+}
 
-            
-                <div class="card skills-card">
-                    <h2>Skills & Technologies</h2>
-                    <ul>
-                        <li><strong>Coding Languages: </strong> C#, Java, SQL, HTML, CSS, Javascript</li>
-                        <li><strong>Tools: </strong>Git Version control, Jira, Bitbucket, GitHub, Visual Studio, Eclipse, VS Code, Chat GPT & Generative AI, Chrome Dev Tools, Microsoft SQL Server, Postman</li>
-                        <li><strong>Frameworks: </strong>.NET, Spring, Angular</li>
-                    </ul>
-                </div>
-                        
+.magazine-container {
+    width: 90vw;
+    height: 90vh;
+    max-width: 1400px;
+    background: #efe4d0;
+    box-shadow: 
+        0px 30px 80px rgba(0,0,0,.7),
+        inset 0px 0px 40px rgba(0,0,0,.08);
+    position: relative;
+    overflow: hidden;
+    border: 12px solid #d6c2a8;
+}
 
-                <div class="card achievements-card">
-                    <h2>Career Achievements</h2>
-                    <ul>
-                        <li><strong>UWM</strong> Selected to serve as Team Lead for Summer Team Members guiding them towards completion of automating UWM's Company Goals Dashboard </li>
-                        <li><strong>UWM</strong> Chosen to mentor and interview new candidates for the company's technology team </li>
-                        <li><strong>UWM</strong> Recruited by the Generative AI Team to perform quality assurance testing to ensure the successful public release of the company's AI Chatbot </li>
-                        <li><strong>UWM</strong> Graduated from on-site Full-Stack coding bootcamp with a 98% assessment score average </li>
-                        <li><strong>Grand Circus</strong> Graduated with a 99% average assessment score from Grand Circus Software Engineering bootcamps May 23rd, 2023</li>
-                        <li><strong>Grand Circus</strong> Awarded the Amazon Java Developer's scholarship as one of the top 7% of applicants for performance in preliminary coding assignments and interviews </li>
-                        
-                    </ul>
-                </div>
+.page {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    background:
+      linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),
+      #efe4d0;
+    background-image:
+        radial-gradient(circle at center, rgba(0,0,0,0.015) 1px, transparent 1px);
+    background-size: 8px 8px;
+}
 
-            </div>
-        </body>
-        </html> 
-        -->
+.page::after {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right, transparent 48%, rgba(0,0,0,.12) 50%, transparent 52%);
+    pointer-events:none;
+}
+
+.page.active {
+    display: flex;
+}
+
+.left-page,
+.right-page {
+    width: 50%;
+    height: 100%;
+    padding: 60px;
+    position: relative;
+}
+
+.left-page {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.cover-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    filter: sepia(.4) contrast(1.1);
+}
+
+.magazine-title {
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-family: Georgia, serif;
+    line-height: .9;
+}
+
+.cover-subtitle {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-top: 20px;
+}
+
+.issue-label {
+    position:absolute;
+    top:40px;
+    right:50px;
+    font-size:1rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.index-item {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.index-item:hover {
+    transform: translateX(10px);
+}
+
+.turn-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.editorial-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.vertical-text {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+    opacity: .6;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(.5);
+}
+</style>
+</head>
+<body>
+
+<div class="magazine-container">
+
+    <!-- COVER -->
+    <div class="page active" id="cover">
+        <div class="left-page">
+            <div class="issue-label">VOL. I</div>
+            <p style="font-size:.9rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:20px;">Chrome Hearts Magazine</p>
+            <h1 class="magazine-title">Jack Convis</h1>
+            <h2 class="cover-subtitle">Software Engineer</h2>
+            <p style="margin-top:30px; font-style:italic; font-size:1.2rem;">"Code, Design, Identity"</p>
+            <p style="margin-top:40px; font-size:1.2rem; font-style:italic;">
+                Volume I
+            </p>
+            <div class="vertical-text">Detroit • Engineering • Design • 2026</div>
+        </div>
+        <div class="right-page">
+            <img src="your-photo.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- INDEX -->
+    <div class="page" id="index">
+        <div class="left-page">
+            <h1 class="section-title">Index</h1>
+            <div class="index-item" onclick="goToPage(2)">01 About</div>
+            <div class="index-item" onclick="goToPage(3)">02 Experience</div>
+            <div class="index-item" onclick="goToPage(4)">03 Education</div>
+            <div class="index-item" onclick="goToPage(5)">04 Accomplishments</div>
+            <div class="index-item" onclick="goToPage(6)">05 Contact</div>
+        </div>
+        <div class="right-page">
+            <img src="index-image.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">About</h1>
+            <p class="editorial-text">
+                Software engineer specializing in backend architecture,
+                APIs, and scalable systems. Combining technical depth
+                with strong personal branding.
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="about.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Experience</h1>
+            <p class="editorial-text">
+                Built API integrations, led SOC2 initiatives,
+                modernized legacy infrastructure, and managed
+                large-scale vendor integrations.
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="experience.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Education</h1>
+            <p class="editorial-text">
+                Grand Circus Bootcamp
+                Amazon Scholarship
+                HackerRank Certification
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="education.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- ACCOMPLISHMENTS -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Accomplishments</h1>
+            <p class="editorial-text">
+                18+ product launches.
+                Security remediation.
+                Leadership initiatives.
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="accomplishments.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Contact</h1>
+            <p class="editorial-text">
+                jackconvis@gmail.com
+                LinkedIn
+                GitHub
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="contact.jpg">
+        </div>
+    </div>
+
+</div>
+
+<script>
+const pages = document.querySelectorAll('.page');
+let currentPage = 0;
+
+function showPage(index) {
+    pages.forEach((page) => {
+        page.classList.remove('active');
+        page.style.transform = 'none';
+        page.style.opacity = '1';
+        page.style.transition = '';
+    });
+
+    currentPage = index;
+    pages[currentPage].classList.add('active');
+};
+
+    pages[index].classList.add('active');
+    currentPage = index;
+
+    console.log('Opened page:', index);
+
+
+function nextPage() {
+    if (currentPage >= pages.length - 1) return;
+
+    const current = pages[currentPage];
+
+    // Ensure current page is visible before animation
+    current.classList.add('active');
+    current.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+    current.style.transformOrigin = 'left center';
+
+    // Flip current page out
+    requestAnimationFrame(() => {
+        current.style.transform = 'perspective(2000px) rotateY(-120deg)';
+        current.style.opacity = '0';
+    });
+
+    setTimeout(() => {
+        current.classList.remove('active');
+        current.style.transition = '';
+        current.style.transform = 'none';
+        current.style.opacity = '1';
+
+        currentPage++;
+        pages[currentPage].classList.add('active');
+    }, 800);
+}600;
+    
+ 400;
+    
+
+
+
+function goToPage(index) {
+    showPage(index);
+}
+</script>
+
+</body>
+</html>
