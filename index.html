@@ -81,6 +81,10 @@ body::before {
     height: 100%;
     padding: 60px;
     position: relative;
+    /* Prepare right page for 3D flips */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform-origin: left center;
 }
 
 .left-page {
@@ -150,6 +154,21 @@ body::before {
     text-transform: uppercase;
 }
 
+/* Prev button (left side) */
+.prev-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+} 
+
 .editorial-text {
     font-size: 1.4rem;
     line-height: 1.6;
@@ -187,7 +206,7 @@ img {
             <p style="margin-top:40px; font-size:1.2rem; font-style:italic;">
                 Volume I
             </p>
-            <div class="vertical-text">Detroit • Engineering • Design • 2026</div>
+            <div class="vertical-text">Royal Oak • Software Engineering • Secure Design • 2026</div>
         </div>
         <div class="right-page">
             <img src="IMG_2183.jpeg">
@@ -203,7 +222,8 @@ img {
             <div class="index-item" onclick="goToPage(3)">02 Experience</div>
             <div class="index-item" onclick="goToPage(4)">03 Education</div>
             <div class="index-item" onclick="goToPage(5)">04 Accomplishments</div>
-            <div class="index-item" onclick="goToPage(6)">05 Contact</div>
+            <div class="index-item" onclick="goToPage(6)">05 Skills</div>
+            <div class="index-item" onclick="goToPage(7)">06 Contact</div>
         </div>
         <div class="right-page">
             <img src="IMG_1813.jpeg">
@@ -275,6 +295,23 @@ img {
         <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
     </div>
 
+    <!-- TECHNICAL PROFICIENCIES -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Technical Proficiencies</h1>
+            <p class="editorial-text">
+                Languages: JavaScript (Node.js), Python, Java
+                Frameworks: Express, React, Django
+                Databases: PostgreSQL, MongoDB
+                Tools: Git, Docker, Terraform
+            </p>
+        </div>
+        <div class="right-page">
+            <img src="skills.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
     <!-- CONTACT -->
     <div class="page">
         <div class="left-page">
@@ -290,13 +327,18 @@ img {
         </div>
     </div>
 
+    <button class="prev-btn" onclick="prevPage()">← Prev Page</button>
 </div>
 
 <script>
 const pages = document.querySelectorAll('.page');
-let currentPage = 0;
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.turn-btn');
+let currentPage = Array.from(pages).findIndex(p => p.classList.contains('active'));
+if (currentPage === -1) currentPage = 0;
 
 function showPage(index) {
+    if (index < 0 || index >= pages.length) return;
     pages.forEach((page) => {
         page.classList.remove('active');
         page.style.transform = 'none';
@@ -306,49 +348,109 @@ function showPage(index) {
 
     currentPage = index;
     pages[currentPage].classList.add('active');
-};
 
-    pages[index].classList.add('active');
-    currentPage = index;
+    // Hide prev button on first page, hide next button on last page
+    if (prevBtn) prevBtn.style.display = (currentPage > 0) ? 'block' : 'none';
+    if (nextBtn) nextBtn.style.display = (currentPage < pages.length - 1) ? 'block' : 'none';
 
     console.log('Opened page:', index);
-
+}
 
 function nextPage() {
     if (currentPage >= pages.length - 1) return;
 
     const current = pages[currentPage];
+    const next = pages[currentPage + 1];
 
-    // Ensure current page is visible before animation
-    current.classList.add('active');
-    current.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
-    current.style.transformOrigin = 'left center';
+    if (next) {
+        next.classList.add('active');
+        next.style.zIndex = '1';
+    }
+    current.style.zIndex = '2';
 
-    // Flip current page out
+    const currentRight = current.querySelector('.right-page');
+    if (!currentRight) {
+        current.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+        current.style.transformOrigin = 'left center';
+        requestAnimationFrame(() => {
+            current.style.transform = 'perspective(2000px) rotateY(-120deg)';
+            current.style.opacity = '0';
+        });
+        setTimeout(() => {
+            showPage(currentPage + 1);
+            current.style.zIndex = '';
+        }, 800);
+        return;
+    }
+
+    currentRight.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+    currentRight.style.transformOrigin = 'left center';
+    currentRight.style.willChange = 'transform, opacity';
+
     requestAnimationFrame(() => {
-        current.style.transform = 'perspective(2000px) rotateY(-120deg)';
-        current.style.opacity = '0';
+        currentRight.style.transform = 'perspective(2000px) rotateY(-180deg)';
+        currentRight.style.opacity = '0';
     });
 
     setTimeout(() => {
-        current.classList.remove('active');
-        current.style.transition = '';
-        current.style.transform = 'none';
-        current.style.opacity = '1';
+        currentRight.style.transition = '';
+        currentRight.style.transform = 'none';
+        currentRight.style.opacity = '1';
 
-        currentPage++;
-        pages[currentPage].classList.add('active');
-    }, 800);
-}600;
-    
- 400;
-    
+        current.style.zIndex = '';
+        if (next) next.style.zIndex = '';
 
+        showPage(currentPage + 1);
+    }, 820);
+}
 
+function prevPage() {
+    if (currentPage <= 0) return;
+
+    const current = pages[currentPage];
+    const prev = pages[currentPage - 1];
+
+    if (prev) {
+        prev.classList.add('active');
+        prev.style.zIndex = '1';
+    }
+    current.style.zIndex = '2';
+
+    const prevRight = prev ? prev.querySelector('.right-page') : null;
+    if (!prevRight) {
+        showPage(currentPage - 1);
+        return;
+    }
+
+    prevRight.style.transition = 'none';
+    prevRight.style.transform = 'perspective(2000px) rotateY(-180deg)';
+    prevRight.style.opacity = '0';
+    prevRight.style.willChange = 'transform, opacity';
+
+    requestAnimationFrame(() => {
+        prevRight.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+        prevRight.style.transform = 'perspective(2000px) rotateY(0deg)';
+        prevRight.style.opacity = '1';
+    });
+
+    setTimeout(() => {
+        prevRight.style.transition = '';
+        prevRight.style.transform = 'none';
+        prevRight.style.opacity = '1';
+
+        current.style.zIndex = '';
+        if (prev) prev.style.zIndex = '';
+
+        showPage(currentPage - 1);
+    }, 820);
+}
 
 function goToPage(index) {
     showPage(index);
 }
+
+// initialize UI state
+showPage(currentPage);
 </script>
 
 </body>
