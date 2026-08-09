@@ -263,8 +263,28 @@ img {
     filter: sepia(.5);
 }
 
-/* Ensure magazine text is dark on light background */
-.magazine-container, .magazine-container * {
-    color: #1a1714 !important;
+/* Ensure magazine text is dark on light background (targeted, avoid overriding buttons) */
+.magazine-container {
+    color: #1a1714;
+}
+
+/* Explicitly ensure common text elements are dark for readability */
+.magazine-container p,
+.magazine-container h1,
+.magazine-container h2,
+.magazine-container li,
+.magazine-container .section-title,
+.magazine-container .editorial-text,
+.magazine-container .index-item,
+.magazine-container .magazine-title,
+.magazine-container .cover-subtitle,
+.magazine-container .vertical-text {
+    color: #1a1714;
+}
+
+/* Keep navigation buttons high-contrast */
+.magazine-container .turn-btn,
+.magazine-container .prev-btn {
+    color: white;
 }
 
