@@ -1,8 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #2c3e50; 
-    color: #ecf0f1; 
+    background-color: transparent; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,5 +261,10 @@ img {
     height: 100%;
     object-fit: cover;
     filter: sepia(.5);
+}
+
+/* Ensure magazine text is dark on light background */
+.magazine-container, .magazine-container * {
+    color: #1a1714 !important;
 }
 
