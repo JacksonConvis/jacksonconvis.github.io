@@ -176,8 +176,10 @@ body::before {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-family: Georgia, serif;
+    font-family: 'UnifrakturCook', 'Cinzel', Georgia, serif;
     line-height: .9;
+    /* Slight negative letter-spacing for decorative gothic title */
+    letter-spacing: 4px;
 }
 
 .cover-subtitle {
@@ -185,6 +187,7 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 6px;
     margin-top: 20px;
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
 }
 
 .issue-label {
@@ -194,12 +197,15 @@ body::before {
     font-size:1rem;
     letter-spacing:2px;
     text-transform:uppercase;
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
 }
 
 .section-title {
     font-size: 3rem;
     margin-bottom: 30px;
     text-transform: uppercase;
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    letter-spacing: 3px;
 }
 
 .index-item {
