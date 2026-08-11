@@ -304,3 +304,91 @@ img {
     color: white;
 }
 
+/* Responsive: mobile-first adjustments for small screens */
+@media (max-width: 768px) {
+    /* Allow vertical scrolling on mobile */
+    body { 
+        overflow: auto; 
+    }
+
+    .magazine-container {
+        width: 98vw;
+        height: auto;               /* let pages grow vertically */
+        max-width: 900px;
+        border-width: 8px;
+        padding-bottom: 96px;      /* space for fixed nav buttons */
+        overflow: visible;
+    }
+
+    /* Pages stack vertically instead of being absolutely positioned */
+    .page {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 18px;
+        background: linear-gradient(rgba(255,255,255,.04), rgba(255,255,255,.04)), #efe4d0;
+        box-shadow: none;
+    }
+
+    .page::after { display: none; }
+
+    .left-page, .right-page {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        transform: none;
+        border-right: none;
+    }
+
+    .left-page { border-bottom: 1px solid rgba(0,0,0,.06); }
+
+    .cover-image { height: auto; max-height: 260px; object-fit: cover; }
+
+    .magazine-title { font-size: 2.6rem; }
+    .section-title { font-size: 1.8rem; margin-bottom: 18px; }
+    .index-item { font-size: 1.2rem; }
+
+    .editorial-text { font-size: 1rem; line-height: 1.5; }
+
+    /* Nested list indentation slightly reduced for narrow screens */
+    .magazine-container ul { padding-left: 1rem; }
+    .magazine-container ul ul { padding-left: 1.6rem; }
+
+    /* Make images scale naturally inside stacked layout */
+    img { width: 100%; height: auto; }
+
+    /* Hide decorative vertical text on mobile */
+    .vertical-text { display: none; }
+
+    /* Reposition navigation buttons to fixed, touch-friendly positions */
+    .turn-btn {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        z-index: 9999;
+        border-radius: 6px;
+    }
+
+    .prev-btn {
+        position: fixed;
+        left: 16px;
+        bottom: 16px;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        z-index: 9999;
+        border-radius: 6px;
+    }
+
+    /* Reduce heavy decorative spacing */
+    .left-page, .right-page { padding: 18px; }
+
+    /* Reduce top/bottom padding in container content */
+    .magazine-container { padding-top: 16px; }
+
+    /* Ensure clickable index items remain usable */
+    .index-item { padding: 8px 4px; }
+}
+
