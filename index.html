@@ -38,7 +38,7 @@
             <h1 class="section-title">Index</h1>
             <div class="index-item" onclick="goToPage(2)">01 About</div>
             <div class="index-item" onclick="goToPage(3)">02 Experience</div>
-            <div class="index-item" onclick="goToPage(4)">03 Education</div>
+            <div class="index-item" onclick="goToPage(4)">03 Certifications</div>
             <div class="index-item" onclick="goToPage(5)">04 Accomplishments</div>
             <div class="index-item" onclick="goToPage(6)">05 Skills</div>
             <div class="index-item" onclick="goToPage(7)">06 Contact</div>
@@ -53,11 +53,9 @@
     <div class="page">
         <div class="left-page">
             <h1 class="section-title">About</h1>
-            <p class="editorial-text">
-                Software engineer specializing in backend architecture,
-                APIs, and scalable systems. Combining technical depth
-                with strong personal branding.
-            </p>
+                <p class="editorial-text">
+                    Jackson Convis — Software Development Engineer based in Royal Oak, MI. With 3+ years building and modernizing enterprise APIs, microservices, and distributed systems, Jackson specializes in C#, .NET, Java, Spring Boot, Kafka, and Azure. Experienced owning backend services, integrating third-party platforms, and delivering production functionality under aggressive deadlines.
+                </p>
         </div>
         <div class="right-page">
             <img src="about.jpg">
@@ -69,11 +67,23 @@
     <div class="page">
         <div class="left-page">
             <h1 class="section-title">Experience</h1>
-            <p class="editorial-text">
-                Built API integrations, led SOC2 initiatives,
-                modernized legacy infrastructure, and managed
-                large-scale vendor integrations.
-            </p>
+            <h3>United Wholesale Mortgage — Software Development Engineer</h3>
+            <p class="editorial-text"><em>Jun 2024 – Present</em></p>
+            <ul class="editorial-text">
+                <li>Own and maintain the Marketing Integration microservice supporting 6 external vendors and 38 REST endpoints; primary developer for MonitorBase and First Orion integrations.</li>
+                <li>Delivered the first Mediator ↔ Loyalties integration (MVP in 2 days) enabling brokers to verify complimentary credit-report eligibility.</li>
+                <li>Built a Withdrawal Loan endpoint for Bilt integration to allow loan cancellations after import.</li>
+                <li>Modernized Loan Fee service by extracting fee logic into public APIs and replacing LNFEES DB dependency with a static C# implementation.</li>
+                <li>Led Azure DB optimizations that reduced infrastructure costs across DocHold and LECS.</li>
+                <li>Improved mutation-test scores from ~40% to 80%+ by removing coverage exclusions and improving testability.</li>
+            </ul>
+
+            <h3>United Wholesale Mortgage — Associate Software Developer</h3>
+            <p class="editorial-text"><em>Jul 2023 – Jun 2024</em></p>
+            <ul class="editorial-text">
+                <li>Developed backend services for mortgage pricing, fee processing, and eligibility workflows; designed fee-mapping and waiver strategies for 20+ fee types.</li>
+                <li>Served as Team Lead for a summer engineering cohort and acted as cross-functional QA for the GenAI platform launch.</li>
+            </ul>
         </div>
         <div class="right-page">
             <img src="experience.jpg">
@@ -84,12 +94,17 @@
     <!-- EDUCATION -->
     <div class="page">
         <div class="left-page">
-            <h1 class="section-title">Education</h1>
-            <p class="editorial-text">
-                Grand Circus Bootcamp
-                Amazon Scholarship
-                HackerRank Certification
-            </p>
+            <h1 class="section-title">Certifications</h1>
+            <ul class="editorial-text">
+                <li>Grand Circus — Full Stack Java Certificate, 2023
+                    <ul>
+                        <li>Amazon Java Developer Scholarship — Top 7% of applicants</li>
+                        <li>99% grade score average across all coding assessments</li>
+                    </ul>
+                </li>
+                <li>HackerRank C# Developer Certification — 2025</li>
+                <li>Google Cybersecurity Professional Certificate — In Progress</li>
+            </ul>
         </div>
         <div class="right-page">
             <img src="education.jpg">
@@ -101,11 +116,15 @@
     <div class="page">
         <div class="left-page">
             <h1 class="section-title">Accomplishments</h1>
-            <p class="editorial-text">
-                18+ product launches.
-                Security remediation.
-                Leadership initiatives.
-            </p>
+            <ul class="editorial-text">
+                <li>Owned complex vendor workflows and integrations (MonitorBase, First Orion).</li>
+                <li>Delivered Business critical integrations and endpoints under tight deadlines (Mediator ↔ Loyalties, Bilt Withdrawal Loan, MonitorBase Prospects).</li>
+                <li>Led modernization efforts to remove redundant fee logic and external DB dependencies.</li>
+                <li>Reduced infrastructure costs through Azure DB right-sizing and optimization.</li>
+                <li>Improved test quality — mutation-test scores from ~40% to 80%+ across services.</li>
+                <li>Contributed SOC 2 work by enhancing logging and sensitive-data masking features.</li>
+                <li>Remediated 20+ high-level bugs and security vulnerabilities as part of technical-debt initiatives.</li>
+            </ul>
         </div>
         <div class="right-page">
             <img src="accomplishments.jpg">
@@ -118,16 +137,11 @@
         <div class="left-page">
             <h1 class="section-title">Technical Proficiencies</h1>
             <ul class="editorial-text">
-                <li>C# / .NET Development</li>
-                <li>REST APIs &amp; Microservices</li>
-                <li>System Modernization</li>
-                <li>Vendor &amp; Third-Party Integrations</li>
-                <li>SQL &amp; EF Core</li>
-                <li>Cyber Security</li>
-                <li>Distributed systems | Kafka</li>
-                <li>Generative AI</li>
-                <li>Agile Software Development</li>
-                <li>Integration testing, Unit testing &amp; Manual testing</li>
+                <li><strong>Languages:</strong> C#, Java, JavaScript, TypeScript, SQL</li>
+                <li><strong>Frameworks &amp; Tech:</strong> .NET, EF Core, Spring Boot, Angular, REST APIs, Microservices, Kafka, Azure, API Management</li>
+                <li><strong>Databases:</strong> SQL Server, MongoDB</li>
+                <li><strong>Testing &amp; Observability:</strong> Unit &amp; Integration Testing, Mutation Testing, QA Testing, Dynatrace</li>
+                <li><strong>Practices:</strong> API Design, Distributed Systems, Agile/Scrum, Cybersecurity, Generative AI, Agentic Development</li>
             </ul>
         </div>
         <div class="right-page">
@@ -141,7 +155,9 @@
         <div class="left-page">
             <h1 class="section-title">Contact</h1>
             <p class="editorial-text">
-                jackconvis@gmail.com<br>
+                Royal Oak, MI<br>
+                <a href="tel:2485006981">248.500.6981</a><br>
+                <a href="mailto:jackconvis@gmail.com">jackconvis@gmail.com</a><br>
                 <a href="https://www.linkedin.com/in/jacksonconvis/" target="_blank" rel="noopener">LinkedIn</a><br>
                 <a href="https://github.com/JacksonConvis" target="_blank" rel="noopener">GitHub</a>
             </p>
@@ -151,9 +167,73 @@
         </div>
     </div>
 
+    <!-- RESUME -->
+    <div class="page">
+        <div class="left-page">
+            <h1 class="section-title">Resume</h1>
+            <div id="resume-content">
+                <h2>Jackson Convis</h2>
+                <p>Software Development Engineer — Royal Oak, MI • 248.500.6981 • <a href="mailto:jackconvis@gmail.com">jackconvis@gmail.com</a></p>
+
+                <h3>Summary</h3>
+                <p>Software Development Engineer with 3+ years of experience building and modernizing enterprise APIs, microservices, and distributed systems in high-volume production environments. Experienced in C#, .NET, Java, Spring Boot, Kafka, Azure, and API integrations.</p>
+
+                <h3>Professional Experience</h3>
+                <h4>United Wholesale Mortgage — Software Development Engineer</h4>
+                <p><em>Jun 2024 – Present</em></p>
+                <ul>
+                    <li>Own and maintain a Marketing Integration microservice supporting 6 external vendors and 38 RESTful API endpoints; primary developer for MonitorBase and First Orion integrations.</li>
+                    <li>Took ownership of a complex MonitorBase vendor workflow previously assigned to a senior developer and drove it to completion.</li>
+                    <li>Designed and delivered the first API integration between Mediator and the Loyalties platform; delivered core MVP functionality within 2 days.</li>
+                    <li>Developed a Withdrawal Loan endpoint in the Loan Status service for the Bilt integration to enable loan cancellations after import.</li>
+                    <li>Led modernization of the Loan Fee service by migrating fee logic into dedicated public APIs and replacing the LNFEES DB dependency with a static C# implementation.</li>
+                    <li>Improved mutation-test scores from ~40% to over 80% across LECS and LNFEES by removing coverage exclusions and improving testability.</li>
+                    <li>Led Azure Database optimization initiatives across DocHold and LECS, reducing infrastructure costs.</li>
+                </ul>
+
+                <h4>United Wholesale Mortgage — Associate Software Developer</h4>
+                <p><em>Jul 2023 – Jun 2024</em></p>
+                <ul>
+                    <li>Developed and maintained backend services supporting mortgage pricing, fee processing, loan eligibility, and related workflows.</li>
+                    <li>Designed fee-mapping and waiver strategies for 20+ fee types and served as Team Lead for a summer engineering cohort.</li>
+                    <li>Acted as cross-functional QA analyst for the public launch of UWM's GenAI platform.</li>
+                </ul>
+
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li><strong>Languages:</strong> C#, Java, JavaScript, TypeScript, SQL</li>
+                    <li><strong>Frameworks &amp; Tech:</strong> .NET, EF Core, Spring Boot, Angular, REST APIs, Microservices, Kafka, Azure, API Management</li>
+                    <li><strong>Databases:</strong> SQL Server, MongoDB</li>
+                    <li><strong>Testing &amp; Observability:</strong> Unit &amp; Integration Testing, Mutation Testing, QA Testing, Dynatrace</li>
+                    <li><strong>Practices:</strong> API Design, Distributed Systems, Agile/Scrum, Cybersecurity, Generative AI, Agentic Development</li>
+                </ul>
+
+                <h3>Education &amp; Certifications</h3>
+                <ul>
+                    <li>Grand Circus — Full Stack Java Certificate, 2023
+                        <ul>
+                            <li>Amazon Java Developer Scholarship — Top 7% of applicants</li>
+                            <li>99% grade score average across all coding assessments</li>
+                        </ul>
+                    </li>
+                    <li>HackerRank C# Developer Certification — 2025</li>
+                    <li>Google Cybersecurity Professional Certificate — In Progress</li>
+                </ul>
+            </div>
+
+            <button class="turn-btn" onclick="downloadResumePDF()">Download Resume PDF</button>
+        </div>
+        <div class="right-page">
+            <img src="resume.jpg">
+        </div>
+        <button class="turn-btn" onclick="nextPage()">Turn Page →</button>
+    </div>
+
     <button class="prev-btn" onclick="prevPage()">← Prev Page</button>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="script.js"></script>
 
 </body>

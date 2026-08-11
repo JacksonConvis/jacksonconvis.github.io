@@ -253,6 +253,16 @@ body::before {
     line-height: 1.6;
 }
 
+/* Nested list indentation for magazine pages */
+.magazine-container ul { 
+    padding-left: 1.2rem; /* base indentation */
+    list-style-type: disc;
+}
+.magazine-container ul ul {
+    padding-left: 2.4rem; /* increased indent for sub-bullets */
+    list-style-type: circle;
+}
+
 .vertical-text {
     position: absolute;
     right: 10px;

@@ -118,3 +118,25 @@ function goToPage(index) {
 
 // initialize UI state
 showPage(currentPage);
+
+// Generate PDF of the resume-content element using jsPDF + html2canvas
+function downloadResumePDF() {
+    const resume = document.getElementById('resume-content');
+    if (!resume) {
+        alert('Resume content not found.');
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'pt', 'a4');
+
+    // Use the html() helper which relies on html2canvas to render the element
+    pdf.html(resume, {
+        callback: function(pdf) {
+            pdf.save('Jackson_Convis_Resume.pdf');
+        },
+        x: 10,
+        y: 10,
+        html2canvas: { scale: 2, useCORS: true }
+    });
+}
