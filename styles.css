@@ -320,16 +320,21 @@ img {
         overflow: visible;
     }
 
-    /* Pages stack vertically instead of being absolutely positioned */
+    /* Pages stack vertically instead of being absolutely positioned; hide non-active pages so mobile shows one page at a time */
     .page {
         position: static;
-        display: block;
+            display: none; /* hide all pages by default on mobile */
         width: 100%;
         height: auto;
         margin-bottom: 18px;
         background: linear-gradient(rgba(255,255,255,.04), rgba(255,255,255,.04)), #efe4d0;
         box-shadow: none;
     }
+
+        /* Show only the active page on mobile */
+        .page.active {
+            display: block;
+        }
 
     .page::after { display: none; }
 
