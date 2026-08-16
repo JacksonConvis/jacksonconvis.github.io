@@ -42,6 +42,7 @@
             <div class="index-item" onclick="goToPage(5)">04 Accomplishments</div>
             <div class="index-item" onclick="goToPage(6)">05 Skills</div>
             <div class="index-item" onclick="goToPage(7)">06 Contact</div>
+            <div class="index-item" onclick="goToPage(8)">07 Resume</div>
         </div>
         <div class="right-page">
             <img src="IMG_1813.jpeg">
@@ -171,57 +172,12 @@
     <div class="page">
         <div class="left-page">
             <h1 class="section-title">Resume</h1>
-            <div id="resume-content">
-                <h2>Jackson Convis</h2>
-                <p>Software Development Engineer — Royal Oak, MI • 248.500.6981 • <a href="mailto:jackconvis@gmail.com">jackconvis@gmail.com</a></p>
-
-                <h3>Summary</h3>
-                <p>Software Development Engineer with 3+ years of experience building and modernizing enterprise APIs, microservices, and distributed systems in high-volume production environments. Experienced in C#, .NET, Java, Spring Boot, Kafka, Azure, and API integrations.</p>
-
-                <h3>Professional Experience</h3>
-                <h4>United Wholesale Mortgage — Software Development Engineer</h4>
-                <p><em>Jun 2024 – Present</em></p>
-                <ul>
-                    <li>Own and maintain a Marketing Integration microservice supporting 6 external vendors and 38 RESTful API endpoints; primary developer for MonitorBase and First Orion integrations.</li>
-                    <li>Took ownership of a complex MonitorBase vendor workflow previously assigned to a senior developer and drove it to completion.</li>
-                    <li>Designed and delivered the first API integration between Mediator and the Loyalties platform; delivered core MVP functionality within 2 days.</li>
-                    <li>Developed a Withdrawal Loan endpoint in the Loan Status service for the Bilt integration to enable loan cancellations after import.</li>
-                    <li>Led modernization of the Loan Fee service by migrating fee logic into dedicated public APIs and replacing the LNFEES DB dependency with a static C# implementation.</li>
-                    <li>Improved mutation-test scores from ~40% to over 80% across LECS and LNFEES by removing coverage exclusions and improving testability.</li>
-                    <li>Led Azure Database optimization initiatives across DocHold and LECS, reducing infrastructure costs.</li>
-                </ul>
-
-                <h4>United Wholesale Mortgage — Associate Software Developer</h4>
-                <p><em>Jul 2023 – Jun 2024</em></p>
-                <ul>
-                    <li>Developed and maintained backend services supporting mortgage pricing, fee processing, loan eligibility, and related workflows.</li>
-                    <li>Designed fee-mapping and waiver strategies for 20+ fee types and served as Team Lead for a summer engineering cohort.</li>
-                    <li>Acted as cross-functional QA analyst for the public launch of UWM's GenAI platform.</li>
-                </ul>
-
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li><strong>Languages:</strong> C#, Java, JavaScript, TypeScript, SQL</li>
-                    <li><strong>Frameworks &amp; Tech:</strong> .NET, EF Core, Spring Boot, Angular, REST APIs, Microservices, Kafka, Azure, API Management</li>
-                    <li><strong>Databases:</strong> SQL Server, MongoDB</li>
-                    <li><strong>Testing &amp; Observability:</strong> Unit &amp; Integration Testing, Mutation Testing, QA Testing, Dynatrace</li>
-                    <li><strong>Practices:</strong> API Design, Distributed Systems, Agile/Scrum, Cybersecurity, Generative AI, Agentic Development</li>
-                </ul>
-
-                <h3>Education &amp; Certifications</h3>
-                <ul>
-                    <li>Grand Circus — Full Stack Java Certificate, 2023
-                        <ul>
-                            <li>Amazon Java Developer Scholarship — Top 7% of applicants</li>
-                            <li>99% grade score average across all coding assessments</li>
-                        </ul>
-                    </li>
-                    <li>HackerRank C# Developer Certification — 2025</li>
-                    <li>Google Cybersecurity Professional Certificate — In Progress</li>
-                </ul>
+            <div class="resume-preview-container">
+                <iframe src="Jackson_Convis_Resume.pdf" class="resume-preview"></iframe>
             </div>
-
-            <button class="turn-btn" onclick="downloadResumePDF()">Download Resume PDF</button>
+            <a href="Jackson_Convis_Resume.pdf" download class="resume-download-btn">
+                <button class="turn-btn">↓ Download Resume PDF</button>
+            </a>
         </div>
         <div class="right-page">
             <img src="resume.jpg">
