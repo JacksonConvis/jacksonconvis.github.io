@@ -430,3 +430,15 @@ img {
     border: none;
 }
 
+@media (min-width: 769px) {
+    .contact-page .right-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-page .resume-preview-container {
+        flex: 0 1 90%;
+        min-height: 0;
+        height: auto;
+    }
+}
